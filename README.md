@@ -44,20 +44,20 @@
 
 | Property | Your answer |
 |---|---|
-| Data structure name | 2 dimentional array|
-| What the keys represent | first index is the source node, the seccond is the location node |
+| Data structure name | dictionary of dictionaries|
+| What the keys represent | first key is the source node, the seccond key is the location node |
 | What the values represent | the minimum cost of trversing from the source to the location |
 | Lookup time complexity | O(1) |
-| Why O(1) lookup is possible | arrays allow any index to be accesd in O(1) time |
+| Why O(1) lookup is possible | dictionaries allow values to be accesd in O(1) time if keys are known |
 
 ### Part 2c: Precomputation Complexity
 
 > State the total complexity and show the arithmetic. Two to three lines max.
 
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs:** 1+k (source and each relic)
+- **Cost per run:** O((E+V)log(V)) (E=number of edges, V=number of nodes)
+- **Total complexity:** O((1+k)(E+V)log(V))
+- **Justification (one line):** Dijkstra runs once for each source node, which is 1+k nodes since the start node and the k relic nodes are the sources. Each run is O((E+V)log(V)) since we are using a priority queue.
 
 ---
 

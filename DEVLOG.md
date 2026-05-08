@@ -19,12 +19,14 @@ I plan on implementing dijkstra's algorithm first because it is needed to find t
 
 ---
 
-## Entry 2 – [Date]: [Short description]
+## Entry 2 – [5/8/2026]: Dijkstra Implementation and Misconceptions
 
 > Required. At least one entry must describe a bug, wrong assumption, or design change
 > you encountered. Describe what went wrong and how you resolved it.
 
-_Your entry here._
+While I was implementing the run_dijkstra function, I realized that the distances needed to be stored as a dictionary. I previously assumed that I could store them as a 2d array, and have now updated the descriptions in readme part 2b to match this.
+
+I also only realized that the dungeon contained non relic rooms when I was anlyizing the time complexity of Dijkstra in readme part 2c.
 
 ---
 
