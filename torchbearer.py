@@ -64,7 +64,11 @@ def select_sources(spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    sources=[spawn]
+    for i in relics:
+        if i not in sources:
+            sources.append(i)
+    return sources
 
 
 def run_dijkstra(graph, source):

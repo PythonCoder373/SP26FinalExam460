@@ -35,8 +35,8 @@
 
 | Source Node Type | Why it is a source |
 |---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| Start S | We must compute the cost from the start node to all other nodes |
+| Relics {R1, R2, ..., Rk} | We need the cost of traveling from every relic to all other relics since we dont know which paths are optimal  |
 
 ### Part 2b: Distance Storage
 
@@ -44,11 +44,11 @@
 
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Data structure name | 2 dimentional array|
+| What the keys represent | first index is the source node, the seccond is the location node |
+| What the values represent | the minimum cost of trversing from the source to the location |
+| Lookup time complexity | O(1) |
+| Why O(1) lookup is possible | arrays allow any index to be accesd in O(1) time |
 
 ### Part 2c: Precomputation Complexity
 
