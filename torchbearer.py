@@ -2,8 +2,8 @@
 CS 460 – Algorithms: Final Programming Assignment
 The Torchbearer
 
-Student Name: ___________________________
-Student ID:   ___________________________
+Student Name: Philip Revak
+Student ID:   131950621
 
 INSTRUCTIONS
 ------------
@@ -34,7 +34,15 @@ def explain_problem():
 
     TODO
     """
-    return "TODO"
+    readme_answers= (
+        "- **Why a single shortest-path run from S is not enough:**"
+    "A single shortest-path run only finds the shortest path to individual relics. This problem requires finding a optimal route that visites every relic at least once.\n"
+    "- **What decision remains after all inter-location costs are known:**"
+    "After the distances from every node to all others are known, we still must determine the optimal route that visites every relic at least once, and begins at the start and ends at the exit.\n"
+    "- **Why this requires a search over orders (one sentence):**"
+    "A search over orders is required because the order that relics are visited determines the total cost, so we must find the optimal order that minimizes the cost."
+    )
+    return readme_answers
 
 
 # =============================================================================

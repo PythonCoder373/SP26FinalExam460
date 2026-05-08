@@ -1,7 +1,7 @@
 # Development Log – The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** Philip Revak
+**Student ID:** 131950621
 
 > Instructions: Write at least four dated entries. Required entry types are marked below.
 > Two to five sentences per entry is sufficient. Write entries as you go, not all in one
@@ -10,12 +10,12 @@
 
 ---
 
-## Entry 1 – [Date]: Initial Plan
+## Entry 1 – 5/7/2026: Initial Plan
 
 > Required. Write this before writing any code. Describe your plan: what you will
 > implement first, what parts you expect to be difficult, and how you plan to test.
 
-_Your entry here._
+I plan on implementing dijkstra's algorithm first because it is needed to find the shortest paths to the relics. Then I will work on the algorithm to determing the optimal route that visits all relics, which I expect to be more cahlengeing since we have already writen dijkstra before. I plan to test each function individualy on several test cases I will create, and test the edge cases.
 
 ---
 
