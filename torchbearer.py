@@ -35,12 +35,12 @@ def explain_problem():
     TODO
     """
     readme_answers= (
-        "- **Why a single shortest-path run from S is not enough:**"
-    "A single shortest-path run only finds the shortest path to individual relics. This problem requires finding a optimal route that visites every relic at least once.\n"
-    "- **What decision remains after all inter-location costs are known:**"
-    "After the distances from every node to all others are known, we still must determine the optimal route that visites every relic at least once, and begins at the start and ends at the exit.\n"
-    "- **Why this requires a search over orders (one sentence):**"
-    "A search over orders is required because the order that relics are visited determines the total cost, so we must find the optimal order that minimizes the cost."
+        "- **Why a single shortest-path run from S is not enough:**\n"
+        "A single shortest-path run only finds the shortest path to individual relics. This problem requires finding a optimal route that visites every relic at least once.\n"
+        "- **What decision remains after all inter-location costs are known:**\n"
+        "After the distances from every node to all others are known, we still must determine the optimal route that visites every relic at least once, and begins at the start and ends at the exit.\n"
+        "- **Why this requires a search over orders (one sentence):**\n"
+        "A search over orders is required because the order that relics are visited determines the total cost, so we must find the optimal order that minimizes the cost."
     )
     return readme_answers
 
@@ -149,7 +149,29 @@ def dijkstra_invariant_check():
 
     TODO
     """
-    return "TODO"
+    readme_answers= (
+        "### Part 3a: What the Invariant Means\n"
+        "- **For nodes already finalized (in S):**\n"
+        "The distance discovered by the algorithm is the optimal distance from the source to the node, and no other path can be better.\n\n"
+
+        "- **For nodes not yet finalized (not in S):**\n"
+        "The distance stored is of the current best known route from the source to the node, but better routes may still be discovered.\n\n"
+
+
+        "### Part 3b: Why Each Phase Holds\n"
+        "- **Initialization : why the invariant holds before iteration 1:**\n"
+        "Initilly we start with only the route from the source node to itself being known as 0. This is optimal since there are no negative edges. The other nodes are at infinite distance since routes to them have not been discovered.\n\n"
+
+        "- **Maintenance : why finalizing the min-dist node is always correct:**\n"
+        "We can safely finalize the min-dist node because any later route we may discover will have to pass through nodes that are at least as far as the current route. Since there are no negative edges, these other routes cannot become shorter.\n\n"
+
+        "- **Termination : what the invariant guarantees when the algorithm ends:**\n"
+        "When the algorithm ends the invariant gaurentees that all of the stored distances are the optimal distance since all nodes are now finalized.\n\n"
+
+        "### Part 3c: Why This Matters for the Route Planner\n"
+        "This matters for the route planner because it needs to compare routes using optimal distances to correctly choose the minimum route that collects all relics."
+    )
+    return readme_answers
 
 
 # =============================================================================

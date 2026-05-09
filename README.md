@@ -72,29 +72,29 @@
 > Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
-  _Your answer here._
+  The distance discovered by the algorithm is the optimal distance from the source to the node, and no other path can be better.
 
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+  The distance stored is of the current best known route from the source to the node, but better routes may still be discovered.
 
 ### Part 3b: Why Each Phase Holds
 
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _Your answer here._
+  Initilly we start with only the route from the source node to itself being known as 0. This is optimal since there are no negative edges. The other nodes are at infinite distance since routes to them have not been discovered.
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _Your answer here._
+  We can safely finalize the min-dist node because any later route we may discover will have to pass through nodes that are at least as far as the current route. Since there are no negative edges, these other routes cannot become shorter.
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _Your answer here._
+  When the algorithm ends the invariant gaurentees that all of the stored distances are the optimal distance since all nodes are now finalized.
 
 ### Part 3c: Why This Matters for the Route Planner
 
 > One sentence connecting correct distances to correct routing decisions.
 
-_Your answer here._
+This matters for the route planner because it needs to compare routes using optimal distances to correctly choose the minimum route that collects all relics.
 
 ---
 
