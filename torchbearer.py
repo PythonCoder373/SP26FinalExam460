@@ -282,7 +282,7 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     
     # pruning
     # if the current route's cost is already at least as much as the best soloutions total cost then it cannot be better since all distances are non negative
-    if cost_so_far>best[0]:
+    if cost_so_far>=best[0]:
         return
     
     # recursive case
