@@ -167,23 +167,24 @@ Because greedy does not concider the future travel costs for the remaining relic
 
 > Three bullets.
 
-- **What is tracked:** _Your answer here._
-- **When it is used:** _Your answer here._
-- **What it allows the algorithm to skip:** _Your answer here._
+- **What is tracked:** The optimal fuel cost for a complete route that starts at start, collects all relics, and ends at the exit.
+- **When it is used:** It is used in the pruning stage, and updated when a new and more optimal route is discovered.
+- **What it allows the algorithm to skip:** It allows the algorithm to to identify incomplete routes that can be pruned early if their cost is already more than the best solution's.
 
 ### Part 6b: Lower Bound Estimation
 
 > Three bullets.
 
-- **What information is available at the current state:** _Your answer here._
-- **What the lower bound accounts for:** _Your answer here._
-- **Why it never overestimates:** _Your answer here._
+- **What information is available at the current state:** the torchbearer's current location, unvisited relics, the current route's cost.
+- **What the lower bound accounts for:** It conciders the lowest possible extra cost that could complete the route.
+- **Why it never overestimates:** It cannot overestimate because cost_so_far is the cost of the current partial path, and all edges have non negative weights so the lowest posible cost the current route could have when completed is its current cost.
 
 ### Part 6c: Pruning Correctness
 
 > One to two bullets. Explain why pruning is safe.
 
-- _Your answer here._
+- For any incomplete route that already has cost_so_far > best[0], since the rest of the route must add a non negative cost, it can never have a final cost less than cost_so_far. 
+- Since we have a complete route with a lower cost, the current route is not optimal and can be pruned.
 
 ---
 
@@ -191,4 +192,4 @@ Because greedy does not concider the future travel costs for the remaining relic
 
 > Bullet list. If none beyond lecture notes, write that.
 
-- _Your references here._
+- Lecture notes only.

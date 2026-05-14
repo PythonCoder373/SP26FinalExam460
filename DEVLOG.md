@@ -36,27 +36,29 @@ I implemented the find_optimal_route and the _explore functions. These search fo
 
 ---
 
-## Entry 4 – [Date]: Post-Implementation Reflection
+## Entry 4 – 5/14/2026: Post-Implementation Reflection
 
 > Required. Written after your implementation is complete. Describe what you would
 > change or improve given more time.
 
-_Your entry here._
+I think that one thing I could improve would be changing relics_remaining to some other data type that would be faster than O(n). I also think that the pruning's lower bound could be improved by changing the extra cost required to complete the route to the already calulated optimal distance from the current node to the exit.
 
 ---
 
-## Final Entry – [Date]: Time Estimate
+## Final Entry – 5/14/2026: Time Estimate
 
 > Required. Estimate minutes spent per part. Honesty is expected; accuracy is not graded.
 
 | Part | Estimated Hours |
 |---|---|
-| Part 1: Problem Analysis | |
-| Part 2: Precomputation Design | |
-| Part 3: Algorithm Correctness | |
-| Part 4: Search Design | |
-| Part 5: State and Search Space | |
-| Part 6: Pruning | |
-| Part 7: Implementation | |
-| README and DEVLOG writing | |
-| **Total** | |
+| Part 1: Problem Analysis | 60 |
+| Part 2: Precomputation Design | 60 |
+| Part 3: Algorithm Correctness | 60 |
+| Part 4: Search Design | 60 |
+| Part 5: State and Search Space | 90 |
+| Part 6: Pruning | 90|
+| Part 7: Implementation | 180 |
+| README and DEVLOG writing | 180 |
+| **Total** | 450 |
+
+These are very rough estimates since I did not accuratly track how long I spent on each part. I worked on the coresponding sections of readme and torchbearer simultaniously, and took breaks often between questions so the times do not represent long focused sessions.
