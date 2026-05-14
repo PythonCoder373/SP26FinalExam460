@@ -105,17 +105,25 @@ This matters for the route planner because it needs to compare routes using opti
 > State the failure mode. Then give a concrete counter-example using specific node names
 > or costs (you may use the illustration example from the spec). Three to five bullets.
 
-- **The failure mode:** _Your answer here._
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- **The failure mode:** 
+A greedy algorithm will choose the next closest unvisited relic repeatedly without considering how that will effect the total route cost through future relics.
+- **Counter-example setup:** 
+S: [(R1, 1), (R2, 2)]
+R1: [(R2, 100), (T, 1)]
+R2: [(R1, 5), (T, 1)]
+T: []
+- **What greedy picks:** 
+Greedy starts at S and selects R1 since it is closest S->R1 cost=1, then R2 since it is the only remaining and closest unvisited relic R1->R2 cost=100, then exits R2->T cost=1. total cost=102
+- **What optimal picks:**
+Optimal starts at S and selects R2 S->R2 cost=2, then R1 R2->R1 cost=5, then exits R1->T cost=1. total cost=8
+- **Why greedy loses:** 
+Because greedy does not concider the future travel costs for the remaining relics, the choices that are locally optimal at each step do not guarantee the global optimal.
 
 ### What the Algorithm Must Explore
 
 > One bullet. Must use the word "order."
 
-- _Your answer here._
+- The algorithm must explore difrent possible orders of collecting relics because the total cost depends on the order that relics are collected in.
 
 ---
 

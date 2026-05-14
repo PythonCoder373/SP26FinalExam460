@@ -188,7 +188,26 @@ def explain_search():
 
     TODO
     """
-    return "TODO"
+    readme_answers= (
+        "### Why Greedy Fails\n"
+        "- **The failure mode:**\n"
+        "A greedy algorithm will choose the next closest unvisited relic repeatedly without considering how that will effect the total route cost through future relics.\n"
+        "- **Counter-example setup:**\n"
+        "S: [(R1, 1), (R2, 2)]\n"
+        "R1: [(R2, 100), (T, 1)]\n"
+        "R2: [(R1, 5), (T, 1)]\n"
+        "T: []\n"
+        "- **What greedy picks:**\n"
+        "Greedy starts at S and selects R1 since it is closest S->R1 cost=1, then R2 since it is the only remaining and closest unvisited relic R1->R2 cost=100, then exits R2->T cost=1. total cost=102\n"
+        "- **What optimal picks:**\n"
+        "Optimal starts at S and selects R2 S->R2 cost=2, then R1 R2->R1 cost=5, then exits R1->T cost=1. total cost=8\n"
+        "- **Why greedy loses:**\n"
+        "Because greedy does not concider the future travel costs for the remaining relics, the choices that are locally optimal at each step do not guarantee the global optimal.\n\n"
+
+        "### What the Algorithm Must Explore\n"
+        "- The algorithm must explore difrent possible orders of collecting relics because the total cost depends on the order that relics are collected in."
+    )
+    return readme_answers
 
 
 # =============================================================================
