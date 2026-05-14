@@ -30,9 +30,9 @@ I also only realized that the dungeon contained non relic rooms when I was anlyi
 
 ---
 
-## Entry 3 – [Date]: [Short description]
+## Entry 3 – 5/14/2026: find_optimal_route Implementation
 
-_Your entry here._
+I implemented the find_optimal_route and the _explore functions. These search for the optimal relic collection order and use pruning to reduce the search space when possible. The _explore function recursivly explores possible routes in a DFS order using backtracking.
 
 ---
 

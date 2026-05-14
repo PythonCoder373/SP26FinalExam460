@@ -136,9 +136,9 @@ Because greedy does not concider the future travel costs for the remaining relic
 
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Current location | current_loc | node | The current node that the torchbearer is located at |
+| Relics already collected | relics_visited_order | list[node] | This stores the visited relics in a list in the order they were collected |
+| Fuel cost so far | cost_so_far | float | The total amount of fuel needed for the currently considerd route |
 
 ### Part 5b: Data Structure for Visited Relics
 
@@ -146,18 +146,18 @@ Because greedy does not concider the future travel costs for the remaining relic
 
 | Property | Your answer |
 |---|---|
-| Data structure chosen | |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Data structure chosen | list[node] |
+| Operation: check if relic already collected | Time complexity: O(n) |
+| Operation: mark a relic as collected | Time complexity: O(n) |
+| Operation: unmark a relic (backtrack) | Time complexity: O(1) |
+| Why this structure fits | The list structure fits for relics_visited_order because it functions like a stack for backtracking since relics are removed and readded in the same order. A list is also apropriate for relics_remaining since it is easy to search and modify. |
 
 ### Part 5c: Worst-Case Search Space
 
 > Two bullets.
 
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
+- **Worst-case number of orders considered:** k!
+- **Why:** there are k! possible ways to order k relics, and in the worst case the algorithm may not be able to prune any of them.
 
 ---
 

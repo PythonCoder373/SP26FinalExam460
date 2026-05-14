@@ -234,7 +234,10 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    best = [float('inf'), []]
+    _explore(dist_table, spawn, relics, [], 0, exit_node, best)
+
+    return (best[0],best[1])
 
 
 def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
@@ -266,7 +269,36 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     explaining why it is safe (cannot skip the optimal solution).
     This comment is graded.
     """
-    pass
+
+    if len(relics_remaining)==0: # base case
+        if dist_table[current_loc][exit_node]==float('inf'):
+            return
+        else:
+            cost = cost_so_far + dist_table[current_loc][exit_node]
+            if cost<best[0]:
+                best[0]=cost
+                best[1]=relics_visited_order[:]
+            return
+    
+    # pruning
+    # if the current route's cost is already at least as much as the best soloutions total cost then it cannot be better since all distances are non negative
+    if cost_so_far>best[0]:
+        return
+    
+    # recursive case
+    for relic in relics_remaining[:]:
+        distance=dist_table[current_loc][relic]
+
+        relics_remaining.remove(relic)
+        relics_visited_order.append(relic)
+
+        _explore(dist_table, relic, relics_remaining, relics_visited_order, cost_so_far + distance, exit_node, best)
+
+        # backtracking
+        relics_visited_order.pop()
+        relics_remaining.append(relic)
+    
+    return
 
 
 # =============================================================================
