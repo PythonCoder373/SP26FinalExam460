@@ -12,7 +12,7 @@ I plan on implementing dijkstra's algorithm first because it is needed to find t
 
 ---
 
-## Entry 2 – [5/8/2026]: Dijkstra Implementation and Misconceptions
+## Entry 2 – 5/8/2026: Dijkstra Implementation and Misconceptions
 
 While I was implementing the run_dijkstra function, I realized that the distances needed to be stored as a dictionary. I previously assumed that I could store them as a 2d array, and have now updated the descriptions in readme part 2b to match this.
 
